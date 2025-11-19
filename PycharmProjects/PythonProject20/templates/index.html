@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Keno – Symulator Keno</title>
+    <style>
+        body { font-family: Arial; background: #121212; color: #fff; text-align: center; padding: 30px; }
+        input { padding: 10px; width: 250px; }
+        button { padding: 10px 20px; background: #00ff99; border: none; cursor: pointer; }
+        .box { margin-top: 20px; font-size: 22px; }
+            .liczba {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        margin: 5px;
+        font-weight: bold;
+    }
+
+    .trafiona {
+        background-color: #00ff66; /* zielony */
+        color: #000;
+    }
+
+    .nietrafiona {
+        background-color: #ff4444; /* czerwony */
+        color: #000;
+    }
+
+    .twoja {
+        background-color: #3498db; /* fioletowy */
+        color: #fff;
+    }
+</style>
+
+</head>
+<body>
+    <h1>🎱 Keno – Symulator Keno ⚡</h1>
+
+    <form method="POST">
+        <p>Wpisz 5 liczb (oddzielone spacją lub przecinkiem):</p>
+        <input type="text" name="liczby" placeholder="np. 9 17 34 55 68">
+        <br><br>
+        <button type="submit">Losuj!</button>
+    </form>
+
+    {% if wynik %}
+    <div class="box">
+        <p>{{ wynik }}</p>
+{% if historia %}
+<hr>
+<h3>📜 Historia ostatnich losowań:</h3>
+{% for wpis in historia %}
+    <div style="margin-bottom: 20px;">
+        <p>🎱 Wylosowane: {{ wpis.wylosowane }}</p>
+        <p>💚 Twoje liczby: {{ wpis.twoje_liczby }}</p>
+        <p>🎯 Trafienia: {{ wpis.trafienia }} ({{ wpis.ile }})</p>
+        <hr>
+    </div>
+{% endfor %}
+{% endif %}
+
+        {% if wylosowane %}
+        <p> Wylosowane liczby:</p>
+        <p>{{ wylosowane }}</p>
+        {% endif %}
+
+        {% if twoje_liczby %}
+        <p> Twoje liczby:</p>
+        <p>{{ twoje_liczby }}</p>
+        {% endif %}
+
+        {% if trafienia %}
+        <p> Trafione liczby:</p>
+        <p>{{ trafienia }}</p>
+        {% else %}
+        <p> Brak trafień w tym losowaniu</p>
+        {% endif %}
+
+        {% if trafienia %}
+        <p>🎯 Trafione liczby: {{ trafienia }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+</body>
+</html>
