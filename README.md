@@ -1,3 +1,7 @@
+otwórz pycharmproject 
+następnie pythonprojekt20
+
+
 🎱 Keno – Symulator Keno (Flask)
 
 Projekt wykonany w Pythonie, wykorzystujący framework Flask do stworzenia interaktywnej strony internetowej, która symuluje grę Keno.
