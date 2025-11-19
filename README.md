@@ -1,5 +1,5 @@
 otwórz pycharmproject 
-następnie pythonprojekt20
+następnie pythonproject20 - potem plik Keno - w tym jest cały kod i instrukcja do otworzenia strony
 
 
 🎱 Keno – Symulator Keno (Flask)
