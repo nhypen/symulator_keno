@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, session
 import random
 
 app = Flask(__name__)
-app.secret_key = "symulator_keno"  # potrzebne do zapisywania historii
+app.secret_key = ("symulator_keno")
+  # potrzebne do zapisywania historii
 
 @app.route("/", methods=["GET", "POST"])
 def index():
